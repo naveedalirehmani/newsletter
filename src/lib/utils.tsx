@@ -49,3 +49,31 @@ export function timeAgo(input: string) {
     return `${years} year${years > 1 ? "s" : ""} ago`;
   }
 }
+
+const names = [
+  "Trouble",
+  "Oliver",
+  "Salem",
+  "Willow",
+  "Zoe",
+  "Boo",
+  "Cali",
+  "Scooter",
+  "Bob",
+  "Oscar",
+  "Sadie",
+  "Tiger",
+  "Lucy",
+  "Gracie",
+  "Princess",
+  "Oreo",
+  "Pepper",
+  "Lucky",
+  "Cuddles",
+  "Bella",
+];
+
+export const getRandomProfile = () => {
+  const randomIndex = Math.floor(Math.random() * names.length);
+  return `https://api.dicebear.com/9.x/notionists/svg?seed=${names[randomIndex]}`;
+};
