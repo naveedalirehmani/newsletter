@@ -8,7 +8,6 @@ import Root from "./layout";
 import { Articles } from "./pages";
 import { Toaster } from "./components/ui/toaster";
 import QueryProvider from "./lib/react-query-provider";
-import Dialogs from "./components\u0017/Dialogs";
 
 function App() {
   const router = createBrowserRouter(
@@ -25,7 +24,6 @@ function App() {
     <div className="App">
       <QueryProvider>
         <RouterProvider router={router} />
-        <Dialogs />
         <Toaster />
       </QueryProvider>
     </div>
