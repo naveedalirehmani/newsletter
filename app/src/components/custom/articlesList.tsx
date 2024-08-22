@@ -7,37 +7,32 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
-
-interface Article {
-  title: string;
-  description: string;
-  url: string;
-}
+import { Article } from "../../types/articles";
 
 interface ArticleListProps {
   articles: Article[];
 }
 
 const ArticleList = ({ articles }: ArticleListProps) => {
-  console.log(articles,'articles')
+  
   return (
-    <div className="space-y-6">
+    <div className="flex flex-wrap justify-start gap-6 pl-20">
       {articles.map((article, index) => (
         <div key={index}>
-          <Card>
+          <Card  className="w-96 min-h-96">
             <CardHeader>
               <CardTitle>{article.title}</CardTitle>
-              {/* <CardDescription></CardDescription> */}
+              <CardDescription>{article.source}</CardDescription>
             </CardHeader>
             <CardContent>
               <p>{article.description}</p>
             </CardContent>
-            <CardFooter>
+            <CardFooter >
               <a
                 href={article.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-500 hover:underline"
+                className="text-blue-500 hover:underline mt-auto"
               >
                 Read more
               </a>

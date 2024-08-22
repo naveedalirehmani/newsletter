@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  react-app:
+    build:
+      context: ../app
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      REACT_APP_NEWS_API: <REACT_APP_NEWS_API>
+      REACT_APP_THE_GUARDIAN: <REACT_APP_THE_GUARDIAN>
+      REACT_APP_NY_TIMES: <REACT_APP_NY_TIMES>
+ 
